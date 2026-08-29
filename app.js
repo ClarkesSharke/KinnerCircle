@@ -857,7 +857,7 @@ async function loadHome() {
 
               <div class="kc-eyebrow">
 
-                TONIGHT'S DINNER
+              THIS KIBBLE SLAPS
 
               </div>
 
