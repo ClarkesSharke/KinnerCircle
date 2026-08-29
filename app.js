@@ -915,7 +915,12 @@ const { data: todayEvents } =
   `;
 document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
-  document.getElementById("home-family-status").innerHTML =
+  document.getElementById("home-family-status").innerHTML = `
+  <div class="kc-family-member"><strong>Dad</strong></div>
+  <div class="kc-family-member"><strong>Mom</strong></div>
+  <div class="kc-family-member"><strong>Brightyn</strong></div>
+  <div class="kc-family-member"><strong>Trent</strong></div>
+`;
   (familyMembers || [])
     .map(
       (member) => `
