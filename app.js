@@ -20,7 +20,7 @@ const STORAGE_URL = "kinnercircle_supabase_url";
 
 const STORAGE_KEY = "kinnercircle_supabase_publishable_key";
 const DEFAULT_SUPABASE_URL = "https://qkvifrbabshbgkcznavq.supabase.co";
-const DEFAULT_SUPABASE_KEY = "";
+const DEFAULT_SUPABASE_KEY = "sb_publishable_kXEIDuKCaW5QXVsrsNsTOg_WNYg8J_c";
 
 
 // ------------------------------------------------------
