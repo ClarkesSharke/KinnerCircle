@@ -914,6 +914,16 @@ const { data: todayEvents } =
   `;
 document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
+  document.getElementById("home-family-status").innerHTML =
+  (familyMembers || [])
+    .map(
+      (member) => `
+        <div class="kc-family-member">
+          <strong>${escapeHtml(member.profiles?.display_name || "Family")}</strong>
+        </div>
+      `
+    )
+    .join("");
   if (!meal) {
 
     document
