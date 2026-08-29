@@ -826,6 +826,17 @@ async function loadHome() {
       .eq("meal_type", "Dinner")
 
       .maybeSingle();
+  const startOfDay = `${today}T00:00:00`;
+const endOfDay = `${today}T23:59:59`;
+
+const { data: todayEvents } =
+  await supabaseClient
+    .from("calendar_events")
+    .select("*")
+    .eq("family_id", currentFamily.family_id)
+    .gte("start_at", startOfDay)
+    .lte("start_at", endOfDay)
+    .order("start_at");
 
   if (error) {
 
