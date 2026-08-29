@@ -927,7 +927,7 @@ function dinnerCard(meal) {
 
       <div class="kc-eyebrow">
 
-        TONIGHT'S DINNER
+      THIS KIBBLE SLAPS
 
       </div>
 
