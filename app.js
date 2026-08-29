@@ -246,6 +246,7 @@ function showLogin() {
   const signupTab = document.getElementById("signup-tab");
 
   const button = document.getElementById("auth-button");
+  const forgotPassword = document.getElementById("forgot-password");
 
   loginTab.onclick = () => {
 
