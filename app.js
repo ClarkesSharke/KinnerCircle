@@ -813,7 +813,7 @@ async function loadHome() {
   const { data: familyMembers, error: familyMembersError } =
   await supabaseClient
     .from("family_members")
-    .select("user_id, role, profiles(display_name)")
+    .select("user_id, role")
     if (familyMembersError) console.error(familyMembersError);
 
   const { data: meal, error } =
