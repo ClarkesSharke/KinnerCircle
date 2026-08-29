@@ -247,6 +247,21 @@ function showLogin() {
 
   const button = document.getElementById("auth-button");
   const forgotPassword = document.getElementById("forgot-password");
+  forgotPassword.onclick = async () => {
+  const email = document.getElementById("email").value.trim();
+
+  if (!email) {
+    document.getElementById("auth-message").textContent = "Enter your email first.";
+    return;
+  }
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://clarkessharke.github.io/KinnerCircle/",
+  });
+
+  document.getElementById("auth-message").textContent =
+    error ? error.message : "Password reset email sent.";
+};
 
   loginTab.onclick = () => {
 
