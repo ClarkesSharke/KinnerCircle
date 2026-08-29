@@ -810,6 +810,11 @@ async function loadHome() {
   `;
 
   const today = localDateString();
+  const { data: familyMembers } =
+  await supabaseClient
+    .from("family_members")
+    .select("user_id, role, profiles(display_name)")
+    .eq("family_id", currentFamily.family_id);
 
   const { data: meal, error } =
 
