@@ -907,7 +907,8 @@ const { data: todayEvents } =
     </div>
 
   `;
-
+document.getElementById("home-today-events").innerHTML =
+  eventListHtml(todayEvents || []);
   if (!meal) {
 
     document
