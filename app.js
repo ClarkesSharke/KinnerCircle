@@ -934,6 +934,7 @@ function dinnerCard(meal) {
       <h2 class="kc-home-meal-name">${escapeHtml(meal.recipe_name)}</h2>
 
     <div class="kc-dinner-time">🕕 ${formatMealTime(meal.meal_time)}</div>
+    <div class="kc-home-plate-count">🍽️ Plate count coming from Who's Forking In?</div>
 
 
 
