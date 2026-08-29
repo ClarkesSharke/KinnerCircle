@@ -931,7 +931,7 @@ function dinnerCard(meal) {
 
       </div>
 
-      <h2>${escapeHtml(meal.recipe_name)}</h2>
+      <h2 class="kc-home-meal-name">${escapeHtml(meal.recipe_name)}</h2>
 
       <div class="kc-dinner-time">
 
