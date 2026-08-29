@@ -885,7 +885,7 @@ async function loadHome() {
 
         <div class="kc-section-title">
 
-          FAMILY
+          TODAY'S GONG SHOW
 
         </div>
 
