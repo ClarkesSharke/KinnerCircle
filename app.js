@@ -943,7 +943,7 @@ function dinnerCard(meal) {
 
       <div class="kc-section-title">
 
-        YOUR DINNER STATUS
+        WHO'S FORKING IN?
 
       </div>
 
