@@ -889,13 +889,7 @@ async function loadHome() {
 
         </div>
 
-        <p class="kc-muted">
-
-          Family member syncing and invitations are ready
-
-          in the database. We'll add the invitation screen next.
-
-        </p>
+        <p class="kc-muted">Loading today's schedule...</p>
 
       </div>
 
