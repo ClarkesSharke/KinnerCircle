@@ -229,6 +229,7 @@ function showLogin() {
           Sign In
 
         </button>
+        <button type="button" id="forgot-password" class="kc-secondary">Forgot password?</button>
 
       </div>
 
