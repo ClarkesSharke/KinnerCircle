@@ -814,6 +814,7 @@ async function loadHome() {
   await supabaseClient
     .from("family_members")
     .select("user_id, role")
+  .eq("family_id", currentFamily.family_id);
     if (familyMembersError) console.error(familyMembersError);
 
   const { data: meal, error } =
@@ -825,7 +826,7 @@ async function loadHome() {
       .select("*")
 
       .eq("family_id", currentFamily.family_id)
-    console.log("familyMembers", familyMembers, familyMembersError);
+    
 
       .eq("meal_date", today)
 
