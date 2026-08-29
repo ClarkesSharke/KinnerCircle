@@ -273,7 +273,7 @@ function showLogin() {
   }
 
   const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-    redirectTo: "https://clarkessharke.github.io/KinnerCircle/",
+redirectTo: "https://clarkessharke.github.io/KinnerCircle/?recovery=1",
   });
 
   document.getElementById("auth-message").textContent =
