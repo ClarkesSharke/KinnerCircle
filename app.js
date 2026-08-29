@@ -43,6 +43,14 @@ async function start() {
   try {
 
     supabaseClient = window.supabase.createClient(url, key);
+    let passwordRecoveryActive = false;
+
+supabaseClient.auth.onAuthStateChange((event) => {
+  if (event === "PASSWORD_RECOVERY") {
+    passwordRecoveryActive = true;
+    showResetPassword();
+  }
+});
 
     const {
 
