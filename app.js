@@ -953,7 +953,7 @@ function dinnerCard(meal) {
         <div class="kc-home-attendance-summary">Family dinner status</div>
 
       </div>
-
+<div class="kc-home-family-row" id="home-family-status"></div>
       <div class="kc-status-buttons">
 
         <button
