@@ -900,7 +900,7 @@ const { data: todayEvents } =
 
         </div>
 
-        <p class="kc-muted">Loading today's schedule...</p>
+        <div id="home-today-events"></div>
 
       </div>
 
