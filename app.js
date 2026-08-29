@@ -404,7 +404,7 @@ redirectTo: "https://clarkessharke.github.io/KinnerCircle/?recovery=1",
 
 }
 
-function showAuthMessage(message) {
+
   function showResetPassword() {
   APP.innerHTML = `
     <div class="kc-page kc-center">
@@ -458,7 +458,7 @@ function showAuthMessage(message) {
     showAuthMessage("Password changed. Sign in with your new password.");
   };
 }
-
+function showAuthMessage(message) {
   document.getElementById(
 
     "auth-message"
