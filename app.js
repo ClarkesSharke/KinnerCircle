@@ -825,6 +825,7 @@ async function loadHome() {
       .select("*")
 
       .eq("family_id", currentFamily.family_id)
+    console.log("familyMembers", familyMembers, familyMembersError);
 
       .eq("meal_date", today)
 
