@@ -63,6 +63,14 @@ supabaseClient.auth.onAuthStateChange((event) => {
       data: { session },
 
     } = await supabaseClient.auth.getSession();
+    const recoveryRequested =
+  new URLSearchParams(window.location.search).get("recovery") === "1";
+
+if (recoveryRequested && session) {
+  passwordRecoveryActive = true;
+  showResetPassword();
+  return;
+}
     if (passwordRecoveryActive) {
   return;
 }
