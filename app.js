@@ -938,7 +938,8 @@ function dinnerCard(meal) {
 
 
 
-      <div class="kc-divider"></div>
+      </div>
+<div class="kc-card kc-home-attendance-card">
 
       <div class="kc-section-title">
 
