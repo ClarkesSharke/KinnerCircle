@@ -91,7 +91,7 @@ if (recoveryRequested && session) {
 
     console.error(error);
 
-    showConnectionSetup("Could not connect to Supabase.");
+    showConnectionSetup(`Could not connect to Supabase: ${error.message}`);
 
   }
 
