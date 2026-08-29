@@ -923,7 +923,7 @@ function dinnerCard(meal) {
 
   return `
 
-    <div class="kc-card kc-dinner-card">
+    <div class="kc-card kc-dinner-card kc-home-meal-card">
 
       <div class="kc-eyebrow">
 
