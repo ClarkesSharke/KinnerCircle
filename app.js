@@ -810,7 +810,7 @@ async function loadHome() {
   `;
 
   const today = localDateString();
-  const { data: familyMembers } =
+  const { data: familyMembers, error: familyMembersError } =
   await supabaseClient
     .from("family_members")
     .select("user_id, role, profiles(display_name)")
