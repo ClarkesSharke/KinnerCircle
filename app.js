@@ -59,6 +59,9 @@ supabaseClient.auth.onAuthStateChange((event) => {
       data: { session },
 
     } = await supabaseClient.auth.getSession();
+    if (passwordRecoveryActive) {
+  return;
+}
 
     if (!session) {
 
