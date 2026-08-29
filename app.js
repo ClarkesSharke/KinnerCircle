@@ -32,10 +32,11 @@ const DEFAULT_SUPABASE_KEY = "sb_publishable_kXEIDuKCaW5QXVsrsNsTOg_WNYg8J_c";
 start();
 
 async function start() {
+  
 
-  const url = localStorage.getItem(STORAGE_URL);
+  const url = localStorage.getItem(STORAGE_URL) || DEFAULT_SUPABASE_URL;
 
-  const key = localStorage.getItem(STORAGE_KEY);
+  const key = localStorage.getItem(STORAGE_KEY) || DEFAULT_SUPABASE_KEY;
 
   if (!url || !key) {
 
