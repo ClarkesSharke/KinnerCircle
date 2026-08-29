@@ -921,15 +921,7 @@ document.getElementById("home-today-events").innerHTML =
   <div class="kc-family-member"><strong>Brightyn</strong></div>
   <div class="kc-family-member"><strong>Trent</strong></div>
 `;
-  (familyMembers || [])
-    .map(
-      (member) => `
-        <div class="kc-family-member">
-          <strong>${escapeHtml(member.profiles?.display_name || "Family")}</strong>
-        </div>
-      `
-    )
-    .join("");
+  
   if (!meal) {
 
     document
