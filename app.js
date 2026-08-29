@@ -393,6 +393,59 @@ function showLogin() {
 }
 
 function showAuthMessage(message) {
+  function showResetPassword() {
+  APP.innerHTML = `
+    <div class="kc-page kc-center">
+      <div class="kc-logo">K</div>
+      <h1>KinnerCircle</h1>
+      <p class="kc-muted">Choose your new password.</p>
+
+      <div class="kc-card kc-form-card">
+        <div id="reset-message"></div>
+
+        <label>New password</label>
+        <input id="new-password" type="password" placeholder="New password" />
+
+        <label>Confirm password</label>
+        <input id="confirm-password" type="password" placeholder="Confirm password" />
+
+        <button class="kc-primary" id="save-new-password">
+          Save New Password
+        </button>
+      </div>
+    </div>
+  `;
+
+  injectAppStyles();
+
+  document.getElementById("save-new-password").onclick = async () => {
+    const password = document.getElementById("new-password").value;
+    const confirmPassword =
+      document.getElementById("confirm-password").value;
+
+    if (!password || password !== confirmPassword) {
+      document.getElementById("reset-message").innerHTML =
+        '<div class="kc-error">Passwords must match.</div>';
+      return;
+    }
+
+    const { error } = await supabaseClient.auth.updateUser({
+      password,
+    });
+
+    if (error) {
+      document.getElementById("reset-message").innerHTML =
+        `<div class="kc-error">${escapeHtml(error.message)}</div>`;
+      return;
+    }
+
+    passwordRecoveryActive = false;
+    await supabaseClient.auth.signOut();
+    window.history.replaceState({}, document.title, window.location.pathname);
+    showLogin();
+    showAuthMessage("Password changed. Sign in with your new password.");
+  };
+}
 
   document.getElementById(
 
