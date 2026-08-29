@@ -944,6 +944,7 @@ function dinnerCard(meal) {
       <div class="kc-section-title">
 
         WHO'S FORKING IN?
+        <div class="kc-home-attendance-summary">Family dinner status</div>
 
       </div>
 
