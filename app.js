@@ -1646,6 +1646,30 @@ async function quickAddRecipe() {
   loadMeals();
 
 }
+async function addTonightMeal() {
+  const recipeName = prompt("Tonight's dinner");
+
+  if (!recipeName) return;
+
+  const { error } =
+    await supabaseClient
+      .from("meals")
+      .insert({
+        family_id: currentFamily.family_id,
+        meal_date: localDateString(),
+        meal_type: "Dinner",
+        meal_time: currentFamily.default_dinner_time || "18:00:00",
+        recipe_name: recipeName.trim(),
+        created_by: currentUser.id,
+      });
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  loadHome();
+}
 
 // ------------------------------------------------------
 
