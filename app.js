@@ -916,6 +916,7 @@ const { data: todayEvents } =
   `;
 document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
+  if (meal) {
   document.getElementById("home-family-status").innerHTML = `
   <div class="kc-family-member-row"><strong>Dad</strong><span>Unconfirmed</span></div>
   <div class="kc-family-member-row">
@@ -925,7 +926,7 @@ document.getElementById("home-today-events").innerHTML =
   <div class="kc-family-member-row">
   <strong>Trent</strong><span>Unconfirmed</span></div>
 `;
-  
+  }
   if (!meal) {
 
     document
