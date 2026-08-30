@@ -96,6 +96,18 @@ body {
 
   font-size: 14px;
 
+  
   color: #9999a5;
+
+}
+.kc-family-member-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
 
 }
