@@ -884,7 +884,7 @@ const { data: todayEvents } =
               <button
 
                 id="add-tonight-meal"
-
+onclick="addTonightMeal()"
                 class="kc-primary"
 
               >
