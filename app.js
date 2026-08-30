@@ -917,10 +917,13 @@ const { data: todayEvents } =
 document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
   document.getElementById("home-family-status").innerHTML = `
-  <div class="kc-family-member"><strong>Dad</strong></div>
-  <div class="kc-family-member"><strong>Mom</strong></div>
-  <div class="kc-family-member"><strong>Brightyn</strong></div>
-  <div class="kc-family-member"><strong>Trent</strong></div>
+  <div class="kc-family-member-row"><strong>Dad</strong><span>Unconfirmed</span></div>
+  <div class="kc-family-member-row">
+  <strong>Mom</strong><span>Unconfirmed</span></div>
+  <div class="kc-family-member-row">
+  <strong>Brightyn</strong><span>Unconfirmed</span></div>
+  <div class="kc-family-member-row">
+  <strong>Trent</strong><span>Unconfirmed</span></div>
 `;
   
   if (!meal) {
