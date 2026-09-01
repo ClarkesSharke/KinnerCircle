@@ -32,7 +32,7 @@ const DEFAULT_SUPABASE_KEY = "sb_publishable_kXEIDuKCaW5QXVsrsNsTOg_WNYg8J_c";
 start();
 
 async function start() {
-  
+
 
   const url = localStorage.getItem(STORAGE_URL) || DEFAULT_SUPABASE_URL;
 
@@ -918,13 +918,13 @@ document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
   if (meal) {
   document.getElementById("home-family-status").innerHTML = `
-  <div class="kc-family-member-row"><strong>Dad</strong><span>Unconfirmed</span></div>
+  <div class="kc-family-member-row"><strong>Dad</strong><button onclick="setDinnerStatus('Dad','home')">Home</button><button onclick="setDinnerStatus('Dad','out')">Out</button></div>
   <div class="kc-family-member-row">
-  <strong>Mom</strong><span>Unconfirmed</span></div>
+  <strong>Mom</strong><button onclick="setDinnerStatus('Mom','home')">Home</button><button onclick="setDinnerStatus('Mom','out')">Out</button></div>
   <div class="kc-family-member-row">
-  <strong>Brightyn</strong><span>Unconfirmed</span></div>
+  <strong>Brightyn</strong><button onclick="setDinnerStatus('Brightyn','home')">Home</button><button onclick="setDinnerStatus('Brightyn','out')">Out</button></div>
   <div class="kc-family-member-row">
-  <strong>Trent</strong><span>Unconfirmed</span></div>
+  <strong>Trent</strong><button onclick="setDinnerStatus('Trent','home')">Home</button><button onclick="setDinnerStatus('Trent','out')">Out</button></div>
 `;
   }
   if (!meal) {
