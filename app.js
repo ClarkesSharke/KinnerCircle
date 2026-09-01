@@ -1914,6 +1914,16 @@ function showProfileMenu() {
 
 }
 
+async function inviteFamilyMember() {
+
+  const email = prompt("Enter family member's email:");
+
+  if (!email) return;
+
+  alert(`Invite will be sent to ${email}`);
+
+}
+
 // ------------------------------------------------------
 
 // ERROR
