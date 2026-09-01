@@ -1897,6 +1897,15 @@ async function quickAddGrocery() {
 // ------------------------------------------------------
 
 function showProfileMenu() {
+    const invite = confirm("Invite a family member?");
+
+  if (invite) {
+
+    inviteFamilyMember();
+
+    return;
+
+  }
 
   const logout = confirm(
 
