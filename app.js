@@ -2689,3 +2689,9 @@ function injectAppStyles() {
   document.head.appendChild(style);
 
 }
+
+async function setDinnerStatus(name, status) {
+
+  console.log(name, status);
+
+}
