@@ -951,7 +951,10 @@ document.getElementById("home-today-events").innerHTML =
     </div>
   `;
 }
-  
+
+  Object.entries(dinnerStatuses).forEach(([name, status]) => {
+  setDinnerStatus(name, status);
+});
   if (!meal) {
 
     document
@@ -2731,9 +2734,17 @@ const dinnerStatuses = {
   Trent: "Unconfirmed"
 };
 
+const savedDinnerStatuses = localStorage.getItem("kinnercircleDinnerStatuses");
+
+if (savedDinnerStatuses) {
+  Object.assign(dinnerStatuses, JSON.parse(savedDinnerStatuses));
+}
+
+
+
 function setDinnerStatus(name, status) {
   dinnerStatuses[name] = status;
-
+localStorage.setItem("kinnercircleDinnerStatuses", JSON.stringify(dinnerStatuses));
   const row = document.querySelector(
     `.kc-family-member-row[data-person="${name}"]`
   );
