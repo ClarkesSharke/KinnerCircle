@@ -2763,6 +2763,7 @@ function setDinnerStatus(name, status) {
   const plateDisplay = document.querySelector(".kc-home-plate-count");
 
   if (plateDisplay) {
-    plateDisplay.textContent = `🍽️ ${plateCount} plate${plateCount === 1 ? "" : "s"} tonight`;
+    plateDisplay.textContent =
+      `🍽️ ${plateCount} plate${plateCount === 1 ? "" : "s"} tonight`;
   }
 }
