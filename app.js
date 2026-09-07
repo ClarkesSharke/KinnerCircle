@@ -923,6 +923,7 @@ document.getElementById("home-today-events").innerHTML =
       <button onclick="setDinnerStatus('Dad','Home')">Home</button>
       <button onclick="setDinnerStatus('Dad','Out')">Out</button>
       <button onclick="setDinnerStatus('Dad','Leftover')">Leftover</button>
+<button onclick="setDinnerStatus('Dad','Unconfirmed')">Unconfirmed</button>
     </div>
 
     <div class="kc-family-member-row" data-person="Mom">
@@ -930,6 +931,7 @@ document.getElementById("home-today-events").innerHTML =
       <button onclick="setDinnerStatus('Mom','Home')">Home</button>
       <button onclick="setDinnerStatus('Mom','Out')">Out</button>
       <button onclick="setDinnerStatus('Mom','Leftover')">Leftover</button>
+      <button onclick="setDinnerStatus('Mom','Unconfirmed')">Unconfirmed</button>
     </div>
 
     <div class="kc-family-member-row" data-person="Brightyn">
@@ -937,6 +939,7 @@ document.getElementById("home-today-events").innerHTML =
       <button onclick="setDinnerStatus('Brightyn','Home')">Home</button>
       <button onclick="setDinnerStatus('Brightyn','Out')">Out</button>
       <button onclick="setDinnerStatus('Brightyn','Leftover')">Leftover</button>
+      <button onclick="setDinnerStatus('Brightyn','Unconfirmed')">Unconfirmed</button>
     </div>
 
     <div class="kc-family-member-row" data-person="Trent">
@@ -944,6 +947,7 @@ document.getElementById("home-today-events").innerHTML =
       <button onclick="setDinnerStatus('Trent','Home')">Home</button>
       <button onclick="setDinnerStatus('Trent','Out')">Out</button>
       <button onclick="setDinnerStatus('Trent','Leftover')">Leftover</button>
+      <button onclick="setDinnerStatus('Trent','Unconfirmed')">Unconfirmed</button>
     </div>
   `;
 }
@@ -2575,7 +2579,7 @@ function injectAppStyles() {
 
 .kc-family-member-row {
   display: grid;
-  grid-template-columns: 90px 1fr 1fr 1fr;
+ grid-template-columns: 90px 1fr 1fr 1fr 1fr;
   gap: 8px;
   align-items: center;
 }
@@ -2749,7 +2753,7 @@ function setDinnerStatus(name, status) {
   }
 
   const plateCount = Object.values(dinnerStatuses)
-    .filter((personStatus) => personStatus === "Home").length;
+    .filter((personStatus) => personStatus === "Home" || personStatus === "Leftover").length;
 
   const plateDisplay = document.querySelector(".kc-home-plate-count");
 
