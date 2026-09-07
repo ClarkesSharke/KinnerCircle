@@ -2567,7 +2567,37 @@ function injectAppStyles() {
       color: white;
 
     }
+.kc-home-family-row {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
 
+.kc-family-member-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.kc-family-member-row strong {
+  font-weight: 800;
+}
+
+.kc-family-member-row button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 6px;
+  font-weight: 800;
+  background: #eef1f6;
+  color: #24364d;
+  cursor: pointer;
+}
+
+.kc-family-member-row button.active {
+  background: #2a3d56;
+  color: white;
+}
     .kc-row-between {
 
       display: flex;
