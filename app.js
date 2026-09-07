@@ -1929,23 +1929,7 @@ async function inviteFamilyMember() {
 
   if (!email) return;
 
-  const inviteCode = crypto.randomUUID();
-
-  const { error } = await supabaseClient
-    .from("family_invites")
-    .insert({
-      family_id: currentFamily.family_id,
-      invited_email: email.trim(),
-      invite_code: inviteCode,
-      created_by: currentUser.id
-    });
-
-  if (error) {
-    alert(error.message);
-    return;
-  }
-
-  alert(`Invite created for ${email}`);
+  alert(`Invite will be sent to ${email}`);
 
 }
 // ------------------------------------------------------
