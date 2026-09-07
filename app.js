@@ -918,14 +918,35 @@ document.getElementById("home-today-events").innerHTML =
   eventListHtml(todayEvents || []);
   if (meal) {
   document.getElementById("home-family-status").innerHTML = `
-  <div class="kc-family-member-row"><strong>Dad</strong><button onclick="setDinnerStatus('Dad','home')">Home</button><button onclick="setDinnerStatus('Dad','out')">Out</button></div>
-  <div class="kc-family-member-row">
-  <strong>Mom</strong><button onclick="setDinnerStatus('Mom','home')">Home</button><button onclick="setDinnerStatus('Mom','out')">Out</button></div>
-  <div class="kc-family-member-row">
-  <strong>Brightyn</strong><button onclick="setDinnerStatus('Brightyn','home')">Home</button><button onclick="setDinnerStatus('Brightyn','out')">Out</button></div>
-  <div class="kc-family-member-row">
-  <strong>Trent</strong><button onclick="setDinnerStatus('Trent','home')">Home</button><button onclick="setDinnerStatus('Trent','out')">Out</button></div>
-`;
+    <div class="kc-family-member-row" data-person="Dad">
+      <strong>Dad</strong>
+      <button onclick="setDinnerStatus('Dad','Home')">Home</button>
+      <button onclick="setDinnerStatus('Dad','Out')">Out</button>
+      <button onclick="setDinnerStatus('Dad','Leftover')">Leftover</button>
+    </div>
+
+    <div class="kc-family-member-row" data-person="Mom">
+      <strong>Mom</strong>
+      <button onclick="setDinnerStatus('Mom','Home')">Home</button>
+      <button onclick="setDinnerStatus('Mom','Out')">Out</button>
+      <button onclick="setDinnerStatus('Mom','Leftover')">Leftover</button>
+    </div>
+
+    <div class="kc-family-member-row" data-person="Brightyn">
+      <strong>Brightyn</strong>
+      <button onclick="setDinnerStatus('Brightyn','Home')">Home</button>
+      <button onclick="setDinnerStatus('Brightyn','Out')">Out</button>
+      <button onclick="setDinnerStatus('Brightyn','Leftover')">Leftover</button>
+    </div>
+
+    <div class="kc-family-member-row" data-person="Trent">
+      <strong>Trent</strong>
+      <button onclick="setDinnerStatus('Trent','Home')">Home</button>
+      <button onclick="setDinnerStatus('Trent','Out')">Out</button>
+      <button onclick="setDinnerStatus('Trent','Leftover')">Leftover</button>
+    </div>
+  `;
+}
   }
   if (!meal) {
 
@@ -2708,8 +2729,40 @@ function injectAppStyles() {
 
 }
 
-async function setDinnerStatus(name, status) {
+const dinnerStatuses = {
+  Dad: "Unconfirmed",
+  Mom: "Unconfirmed",
+  Brightyn: "Unconfirmed",
+  Trent: "Unconfirmed"
+};
 
-  console.log(name, status);
+function setDinnerStatus(name, status) {
+  dinnerStatuses[name] = status;
 
+  const row = document.querySelector(
+    `.kc-family-member-row[data-person="${name}"]`
+  );
+
+  if (row) {
+    row.querySelectorAll("button").forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    const selectedButton = [...row.querySelectorAll("button")].find(
+      (button) => button.textContent.trim() === status
+    );
+
+    if (selectedButton) {
+      selectedButton.classList.add("active");
+    }
+  }
+
+  const plateCount = Object.values(dinnerStatuses)
+    .filter((personStatus) => personStatus === "Home").length;
+
+  const plateDisplay = document.querySelector(".kc-home-plate-count");
+
+  if (plateDisplay) {
+    plateDisplay.textContent = `🍽️ ${plateCount} plate${plateCount === 1 ? "" : "s"} tonight`;
+  }
 }
