@@ -993,46 +993,7 @@ function dinnerCard(meal) {
 
       </div>
 <div class="kc-home-family-row" id="home-family-status"></div>
-      <div class="kc-status-buttons">
-
-        <button
-
-          data-status="Home"
-
-          data-meal="${meal.meal_id}"
-
-        >
-
-          Home
-
-        </button>
-
-        <button
-
-          data-status="Out"
-
-          data-meal="${meal.meal_id}"
-
-        >
-
-          Out
-
-        </button>
-
-        <button
-
-          data-status="Leftover"
-
-          data-meal="${meal.meal_id}"
-
-        >
-
-          Leftover
-
-        </button>
-
-      </div>
-
+      
       <div id="status-result"></div>
 
     </div>
