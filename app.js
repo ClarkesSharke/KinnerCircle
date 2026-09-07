@@ -1913,13 +1913,32 @@ function showProfileMenu() {
 }
 
 async function inviteFamilyMember() {
-
   const email = prompt("Enter family member's email:");
 
   if (!email) return;
 
-  alert(`Invite will be sent to ${email}`);
+  const { data, error } = await supabaseClient.functions.invoke(
+    "invite-family-member",
+    {
+      body: {
+        email: email.trim(),
+        family_id: currentFamily.family_id,
+      },
+    }
+  );
 
+  if (error) {
+    console.error(error);
+    alert("Invite failed. Check the console for details.");
+    return;
+  }
+
+  if (!data?.success) {
+    alert(data?.error || "Invite failed.");
+    return;
+  }
+
+  alert(`Invite sent to ${email}`);
 }
 // ------------------------------------------------------
 
