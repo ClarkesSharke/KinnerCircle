@@ -947,7 +947,7 @@ document.getElementById("home-today-events").innerHTML =
     </div>
   `;
 }
-  }
+  
   if (!meal) {
 
     document
