@@ -1923,7 +1923,7 @@ function showProfileMenu() {
 
 }
 
-aasync function inviteFamilyMember() {
+async function inviteFamilyMember() {
 
   const email = prompt("Enter family member's email:");
 
