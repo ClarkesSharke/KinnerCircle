@@ -508,13 +508,17 @@ async function loadKinnerCircle() {
   }
 
   if (!memberships || memberships.length === 0) {
+  const { data: inviteResult, error: inviteError } =
+    await supabaseClient.functions.invoke("accept-family-invite");
 
-    showCreateFamily();
-
+  if (!inviteError && inviteResult?.success) {
+    await loadKinnerCircle();
     return;
-
   }
 
+  showCreateFamily();
+  return;
+}
   currentFamily = memberships[0].families;
 
   renderApp();
